@@ -27,6 +27,22 @@ class Admin {
         }
     }
 
+    async getOne(id) {
+        try {
+            return await adminDB.findById(id)
+        } catch(e) {
+            throw e
+        }
+    }
+
+    async getOnebyEmail(email) {
+        try{
+            return await adminDB.find({ email: email })
+        } catch(e) {
+            throw e
+        }
+    }
+
     async edit(id, data) {
         try{
             await adminDB.updateOne({ _id: id }, data)

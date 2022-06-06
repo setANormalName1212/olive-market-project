@@ -6,14 +6,6 @@ const product = {
         await productDAO.add(req.body)
             .then(res.redirect("/main"))
     },
-    getOne: async (req, res) => {
-        await productDAO.getOne(req.params.id)
-            .then(product => {
-                res.render("product", {
-                    product
-                })
-            })
-    },
     edit: async (req, res) => {
         await productDAO.edit(req.params.id, req.body)
             .then(res.redirect("/main"))

@@ -7,9 +7,6 @@ const product = require("../controllers/product-controller")
 // Add product
 router.post("/product/add", product.add)
 
-// Get product
-router.get("/product/:id", product.getOne)
-
 // Edit product
 router.post("/product/edit/:id", product.edit)
 
