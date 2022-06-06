@@ -12,9 +12,8 @@ class Admin {
                     // hash
                     data.password = hash
 
-                    newAdmin = new adminDB({
-                        first_name: data.first_name,
-                        last_name: data.last_name,
+                    const newAdmin = new adminDB({
+                        name: data.name,
                         email: data.email,
                         password: data.password
                     })
