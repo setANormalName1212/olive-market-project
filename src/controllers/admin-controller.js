@@ -1,7 +1,13 @@
 const adminDAO = require("../models/DAOs/adminDAO")
 
+// JWT
+const jwt = require('jsonwebtoken')
+
+// bcrypt
+const bcrypt = require('bcrypt')
+
 const admin = {
-    add: async (req, res) => {
+    register: async (req, res) => {
         const {name, email, password, password2} = req.body
         const errors = []
 
@@ -26,7 +32,7 @@ const admin = {
             })
         } else {
             await adminDAO.add(req.body)
-                .then(res.redirect('/login'))
+                .then(res.redirect('/'))
         }
     },
 
@@ -56,8 +62,18 @@ const admin = {
                             errors
                         })
                     } else {
-                        res.cookie("user", admin.id)
-                        res.redirect('/main')
+                        bcrypt.compare(password, admin.password, (err, isMatch) => {
+                            if(isMatch) {
+                                const access_token = jwt.sign(admin.id, process.env.ACCESS_TOKEN)
+                                res.cookie("user", access_token)
+                                res.redirect('/main')
+                            } else {
+                                errors.push({ msg: "An error has occurred" })
+                                res.render('index', {
+                                    errors
+                                })
+                            }
+                        })
                     }
                 })
         }
