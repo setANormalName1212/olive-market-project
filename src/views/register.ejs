@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<%- include("partials/messagess") %>
+
+<form action="/admin/add" method="post">
+    <label for="">
+        <h3>Name</h3>
+        <input type="text" name="name">
+    </label>
+    <label for="">
+        <h3>Email</h3>
+        <input type="email" name="email">
+    </label>
+    <label for="">
+        <h3>Password</h3>
+        <input type="password" name="password">
+    </label>
+    <label for="">
+        <h3>Re-write password</h3>
+        <input type="password" name="password2">
+    </label>
+    <button type="submit">Register</button>
+</form>
+
+
+<%- include("partials/footer") %> 

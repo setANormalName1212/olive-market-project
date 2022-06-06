@@ -1,0 +1,1 @@
+controllers GET: ALL get http methods are in index.router, index.controllers
