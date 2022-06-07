@@ -1,7 +1,36 @@
 <%- include("partials/header") %> 
 
+<%- include("partials/nav") %> 
+
 <%- include("partials/messagess") %> 
 
+<main class="w-100 d-flex justify-content-center">
+    <section>
+        
+        <a href="/product/add">Add products</a>
 
+
+        <% for(let i = 0; i < products.length; i++) { %>
+            <article>
+                <a href="/product/get/<%= products[i].id %> ">
+                    <h1><%= products[i].title %> </h1>
+                </a>
+            </article>
+        <% } %> 
+    </section>
+    
+    <section>
+
+        <a href="/supplier/add">Add supplier</a>
+
+        <% for(let i = 0; i < suppliers.length; i++) { %>
+            <article>
+                <a href="/supplier/get/<%= suppliers.id %> ">
+                    <h1><%= suppliers[i].name %> </h1>
+                </a>
+            </article>
+        <% } %>  
+    </section>
+</main>
 
 <%- include("partials/footer") %> 

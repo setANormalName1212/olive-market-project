@@ -36,7 +36,7 @@ class Admin {
 
     async getOnebyEmail(email) {
         try{
-            return await adminDB.find({ email: email })
+            return await adminDB.findOne({ email: email })
         } catch(e) {
             throw e
         }

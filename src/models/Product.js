@@ -10,11 +10,12 @@ const productSchema = new Schema({
         required: true,
         type: Number
     },
-    img: {
+    category: {
         required: true,
-        type: String
+        type: Array
     },
-    description: {
+    supplier: {
+        required: true,
         type: String
     },
     stock: {

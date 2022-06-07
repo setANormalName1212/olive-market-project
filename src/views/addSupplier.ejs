@@ -1,0 +1,26 @@
+<%- include("partials/header") %> 
+
+<%- include("partials/nav") %> 
+
+<%- include("partials/messagess") %> 
+
+<section class="d-flex justify-content-center mt-5">
+    <form action="/supplier/add" method="post" class="row w-25 p-2 border border-2 border-success rounded">
+        <label class="mt-3">
+            <h3>Name</h3>
+            <input type="text" name="name">
+        </label>
+        <label class="mt-3">
+            <h3>Phone</h3>
+            <input type="number" name="phone">
+        </label>
+        <label class="mt-3">
+            <h3>Product List</h3>
+            <input type="text" name="productList">
+        </label>
+        <button type="submit" class="btn btn-success mt-3">Add supplier</button>
+    </form>
+</section>
+
+
+<%- include("partials/footer") %> 

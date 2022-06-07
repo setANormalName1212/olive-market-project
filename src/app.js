@@ -12,12 +12,13 @@ app.set('PORT', process.env.PORT || 8080)
 
 // mongoose
 const mongoose = require("mongoose")
-
 mongoose.connect(process.env.MONGO_URI, {
-    useUnifiedTopology: true
-}, () => {
-    console.log("MongoDB connected...")
+    useNewUrlParser: true
 })
+    .then(() => {
+        console.log(`MongoDB connected...`)
+    })
+    .catch(e => console.log(e))
 
 // EJS
 app.set("views", path.join(__dirname, 'views'))

@@ -1,7 +1,7 @@
 // JWT
 const jwt = require("jsonwebtoken")
 
-const cookies = async (req, res) => {
+const cookies = async (req, res, next) => {
     const errors = []
 
     if(!req.cookies.user) {
