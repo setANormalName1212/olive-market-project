@@ -10,7 +10,7 @@ const supplierSchema = new Schema({
         type: Number
     },
     productList: {
-        type: Array
+        type: String
     }
 })
 

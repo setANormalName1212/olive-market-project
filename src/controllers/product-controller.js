@@ -4,7 +4,7 @@ const productDAO = require("../models/DAOs/productDAO")
 const product = {
     add: async (req, res) => {
         await productDAO.add(req.body)
-            .then(res.redirect("/main"))
+            .then(res.redirect("/product/add"))
     },
     edit: async (req, res) => {
         await productDAO.edit(req.params.id, req.body)

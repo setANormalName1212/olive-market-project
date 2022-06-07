@@ -10,6 +10,9 @@ const cookies = require("../controllers/cookies/cookies")
 // Add
 router.post("/admin/add", admin.register)
 
+// login
+router.post("/admin/login", admin.login)
+
 // Edit
 router.post("/admin/edit/:id", cookies, admin.edit)
 

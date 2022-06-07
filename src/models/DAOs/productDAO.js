@@ -19,8 +19,7 @@ class productDAO {
 
     async getOne(id) {
         try {
-            const product = await productDB.findById(id)
-            return product
+            return await productDB.findById(id)
         } catch(e) {
             throw e
         }

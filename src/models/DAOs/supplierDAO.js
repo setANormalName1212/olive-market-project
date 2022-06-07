@@ -14,6 +14,14 @@ class supplierDAO {
         }
     }
 
+    async getAll() {
+        try{
+            return await supplierDB.find()
+        } catch(e) {
+            throw e
+        }
+    }
+
     async getOne(id) {
         try{
             return await supplierDB.findById(id)

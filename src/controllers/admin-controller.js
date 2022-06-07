@@ -31,8 +31,18 @@ const admin = {
                 errors
             })
         } else {
-            await adminDAO.add(req.body)
-                .then(res.redirect('/'))
+            await adminDAO.getOnebyEmail(email)
+                .then(user => {
+                    if(user) {
+                        errors.push({ msg: "Email already registered" })
+                        res.render("register", {
+                            errors
+                        })
+                    } else {
+                        adminDAO.add(req.body)
+                            .then(res.redirect('/'))
+                    }
+                })
         }
     },
 
@@ -69,7 +79,7 @@ const admin = {
                                 res.redirect('/main')
                             } else {
                                 errors.push({ msg: "An error has occurred" })
-                                res.render('index', {
+                                res.render('login', {
                                     errors
                                 })
                             }

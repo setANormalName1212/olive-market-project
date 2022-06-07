@@ -8,9 +8,20 @@ const index = {
         res.render('login')
     },
     main: async (req, res) => {
-        res.render('main')
+        const products = await productDAO.getAll()
+        const suppliers = await supplierDAO.getAll()
+        res.render('main', {
+            products,
+            suppliers
+        })
     },
-    product: async (req, res) => {
+    addSupplier: async (req, res) => {
+        res.render("addSupplier")
+    },
+    addProduct: async (req, res) => {
+        res.render("addProduct")
+    },
+    getProduct: async (req, res) => {
         await productDAO.getOne(req.params.id)
             .then(supplier => {
                 res.render('supplier', {
@@ -18,7 +29,7 @@ const index = {
                 })
             })
     },
-    supplier: async (req, res) => {
+    getSupplier: async (req, res) => {
         await supplierDAO.getOne(req.params.id)
             .then(supplier => {
                 res.render('product', {

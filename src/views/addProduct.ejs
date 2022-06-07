@@ -1,0 +1,38 @@
+<%- include("partials/header") %> 
+
+<%- include("partials/nav") %> 
+
+<%- include("partials/messagess") %> 
+
+
+<section class="d-flex justify-content-center row">
+
+    <form action="/product/add" method="post" class="row w-25 p-2 border border-2 border-success rounded">
+        <label class="w-100 mt-3">
+            <h3>Title</h3>
+            <input type="text" name="title" class="w-100">
+        </label>
+        <label class="w-100 mt-3">
+            <h3>Price</h3>
+            <input type="text" name="price" class="w-100">
+        </label>
+        <label class="w-100 mt-3">
+            <h3>Category</h3>
+            <select name="category" class="w-100">
+                <option value="frutos secos" selected>- select a category -</option>
+                <option value="frutos secos">frutos secos</option>
+                <option value="yogures">yogures</option>
+                <option value="congelados">congelados</option>
+                <option value="condimentos">condimentos</option>
+            </select>
+        </label>
+        <label class="w-100 mt-3">
+            <h3>Supplier</h3>
+            <input type="text" name="supplier" class="w-100">
+        </label>
+        <button type="submit" class="btn btn-success mt-3 p-2 w-100">Add product</button>
+    </form>
+</section>
+
+
+<%- include("partials/footer") %> 
