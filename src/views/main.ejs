@@ -4,33 +4,37 @@
 
 <%- include("partials/messagess") %> 
 
-<main class="w-100 d-flex justify-content-center">
-    <section>
-        
-        <a href="/product/add">Add products</a>
-
-
-        <% for(let i = 0; i < products.length; i++) { %>
-            <article>
-                <a href="/product/get/<%= products[i].id %> ">
-                    <h1><%= products[i].title %> </h1>
-                </a>
-            </article>
-        <% } %> 
-    </section>
+<main class="container">
+    <div class="row">
+        <section class="col-md-5 d-flex justify-content-center">
+            <a href="/product/add" class="nav-link">Add products</a>
     
-    <section>
-
-        <a href="/supplier/add">Add supplier</a>
-
-        <% for(let i = 0; i < suppliers.length; i++) { %>
-            <article>
-                <a href="/supplier/get/<%= suppliers.id %> ">
-                    <h1><%= suppliers[i].name %> </h1>
-                </a>
-            </article>
-        <% } %>  
-    </section>
+    
+            <% for(let i = 0; i < products.length; i++) { %>
+                <article>
+                    <a href="/product/get/<%= products[i].id %> ">
+                        <h1><%= products[i].title %> </h1>
+                    </a>
+                </article>
+            <% } %> 
+        </section>
+        
+        <section class="col-md-7 d-flex justify-content-center">
+    
+            <a href="/supplier/add" class="nav-link">Add supplier</a>
+    
+            <% for(let i = 0; i < suppliers.length; i++) { %>
+                <article>
+                    <a href="/supplier/get/<%= suppliers.id %> ">
+                        <h1><%= suppliers[i].name %> </h1>
+                    </a>
+                </article>
+            <% } %>  
+        </section>
+    </div>
+    <div>
+        
+    </div>
 </main>
 
 <%- include("partials/footer") %> 
