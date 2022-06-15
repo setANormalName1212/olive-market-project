@@ -1,12 +1,11 @@
-<%- include("partials/header") %> 
+<%- include("partials/head") %> 
 
-<%- include("partials/nav") %> 
+<%- include("partials/header") %> 
 
 <%- include("partials/messagess") %> 
 
-<main class="container">
-    <div class="row">
-        <section class="col-md-5 d-flex justify-content-center">
+<main class="main-main">
+        <section class="">
             <a href="/product/add" class="nav-link">Add products</a>
     
     
@@ -19,9 +18,9 @@
             <% } %> 
         </section>
         
-        <section class="col-md-7 d-flex justify-content-center">
+        <section class="">
     
-            <a href="/supplier/add" class="nav-link">Add supplier</a>
+            <a href="/supplier/add" class="">Add supplier</a>
     
             <% for(let i = 0; i < suppliers.length; i++) { %>
                 <article>
@@ -31,10 +30,6 @@
                 </article>
             <% } %>  
         </section>
-    </div>
-    <div>
-        
-    </div>
 </main>
 
 <%- include("partials/footer") %> 
